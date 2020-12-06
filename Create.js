@@ -1,4 +1,4 @@
-const list = [];
+var list = [];
 
 const add_button = document.querySelector("#add_button");
 add_button.onclick = add_list;
@@ -8,6 +8,7 @@ function add_list(){
     const add = document.querySelector("#add");
 
     if(text !== "") {
+        list.push(text);
         add.value = "";
         add.focus();
     }
@@ -15,11 +16,11 @@ function add_list(){
 }
 
 function add_show_list(){
-    const additional_list = "<ul>";
-    for(const i=0; i<list.length; i++){
-        additional_list += "<li>" + list.length[i] + "<span id = " + i + "> X </span></li>";
+    let additional_list = "<ul>";
+    for(var i=0; i<list.length; i++){
+        additional_list += "<li>" + list[i] + "<span id = " + i + "> X</span></li>";
     }
     additional_list += "</ul>";
     
-    document.querySelector("list").innerHTML = additional_list;
+    document.querySelector("#list").innerHTML = additional_list;
 }
